@@ -1,16 +1,17 @@
 import ResortCard from"./ResortCard";
+import type { ResortListing } from "../data/data";
 
-export default function ResortContainer(){
+
+interface ResortContainerProps{
+    listings: ResortListing[];
+}
+
+export default function ResortContainer({ listings } : ResortContainerProps){
     return (
         <div className = "ResortContainer">
-        
-        < ResortCard  
-        image= "src\assets\images folder\1.jpg"
-        country= "hi"
-        />
-        < ResortCard />
-        < ResortCard />
-        
+            {listings.map((listing) => (
+                <ResortCard key ={listing.id} {...listing}/>
+            ))}
         </div>
     );
 }

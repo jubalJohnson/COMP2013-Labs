@@ -186,29 +186,26 @@
 
 .ResortCard
 {
-  border: 2px #1d4adc solid;
-  width: 120px;
+  text-align: left;
   padding: 10px;
-  margin: 0 10px;
+  margin: 0 10px; 
 }
 
 .ResortContainer
 {
   display: flex;
-  border: 2px #d60f0f solid;
   padding: 10px;
   margin: 10px;
   justify-content: space-around;
-
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   .ResortContainer{
     flex-direction: column;
   }
   .ResortCard{
-     display: flex;
-     width: 90%; 
+     
+     width: 50%; 
      justify-content: space-around;
      align-items: center;  
      margin: 10px auto;

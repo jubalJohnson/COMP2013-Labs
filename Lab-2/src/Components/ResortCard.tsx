@@ -1,22 +1,25 @@
-interface ResortCardProps{
-    image: string;
-    country: string;
-    resortName: string;
-    rating: string;
-    price: string;
-}
+import type {ResortListing} from "../data/data";
 
-
-export default function ResortCard(props: ResortCardProps) {
+export default function ResortCard({
+    pic,
+    country,
+    location,
+    rating,
+    price
+}: ResortListing) {
     return (
-    <div className ="ResortCard">
-        <img src = {props.image} alt = {props.resortName} width = "100px"/>
-        <h2>{props.country}</h2>
-        <h2>{props.resortName}</h2>
-        <h2>{props.rating}</h2>
-        <h2>{props.price}</h2>
+        <div className ="ResortCard">
+
+            <img src = {pic} alt = {location} width = "100%" height= "250px"/>
+
+            <h2 style = {{fontSize: "17px"}}>{country}</h2>
         
+            <p style = {{fontStyle: "italic", fontSize: "17px"}}>{location}</p>
         
-    </div>
+            <p style= {{ color: rating <= 4.0 ? "red" : "green"}}>{rating}★</p>
+        
+            <p>${price}/night</p>
+
+        </div>
     );
 }
